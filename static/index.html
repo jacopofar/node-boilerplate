@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Boilerplate web application</title>
+  <link type="text/css" rel="stylesheet" href="css/main.css" media="all">
+  <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+  <p>Hello, this is an example web application</p>
+  <p id="current_time">Here will appear the current server time if everything's fine</p>
+  <script>
+  var socket = io();
+  console.log("created a websocket with id "+socket.id);
+  socket.on('timestamp', function (data) {
+    document.getElementById('current_time').innerHTML = "server timestamp: "+data;
+  });
+  </script>
+
+</body>
+</html>
