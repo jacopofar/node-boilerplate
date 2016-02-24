@@ -12,11 +12,12 @@
   <p id="current_time">Here will appear the current server time if everything's fine</p>
   <script>
   var socket = io();
-  console.log("created a websocket with id "+socket.id);
+  socket.on('connect', function (data) {
+    console.log("created a websocket with id "+socket.id);
+  });
   socket.on('timestamp', function (data) {
     document.getElementById('current_time').innerHTML = "server timestamp: "+data;
   });
   </script>
-
 </body>
 </html>
