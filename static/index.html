@@ -13,6 +13,7 @@
     <article>
       <p>Hello, this is an example web application</p>
       <p id="current_time">Here will appear the current server time if everything's fine</p>
+      <textarea name="textarea" rows="10" cols="50" placeholder="Write something here..." id="edit_me"></textarea>
     </article>
     <aside>another bar</aside>
   </div>
@@ -24,6 +25,15 @@
   });
   socket.on('timestamp', function (data) {
     document.getElementById('current_time').innerHTML = "server timestamp: "+data;
+  });
+
+  socket.on('update text', function (data) {
+    console.log("received "+data);
+    document.getElementById('edit_me').value = data;
+  });
+
+  document.getElementById('edit_me').addEventListener('input',function(ev){
+    socket.emit('textarea change',ev.target.value);
   });
   </script>
 </body>

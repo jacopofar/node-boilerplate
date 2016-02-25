@@ -16,6 +16,13 @@ io.on('connection', (socket) => {
   setInterval(function(){
     socket.emit('timestamp',new Date().toISOString());
   },900);
+
+  socket.on('textarea change', function (data) {
+    console.log(">> "+data);
+      // we tell the client to execute 'new message'
+      socket.broadcast.emit('update text', data);
+    });
+
 });
 
 const port = conf.get('port');
