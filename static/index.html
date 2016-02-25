@@ -8,8 +8,15 @@
   <script src="/socket.io/socket.io.js"></script>
 </head>
 <body>
-  <p>Hello, this is an example web application</p>
-  <p id="current_time">Here will appear the current server time if everything's fine</p>
+  <div class="flex">
+    <nav>navigation</nav>
+    <article>
+      <p>Hello, this is an example web application</p>
+      <p id="current_time">Here will appear the current server time if everything's fine</p>
+    </article>
+    <aside>another bar</aside>
+  </div>
+
   <script>
   var socket = io();
   socket.on('connect', function (data) {

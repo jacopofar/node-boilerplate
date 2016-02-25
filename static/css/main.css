@@ -1,3 +1,47 @@
 #current_time {
   font-weight:bold;
 }
+
+.flex
+{
+  /* basic styling */
+  /*width: 350px;
+  height: 200px;*/
+  border: 1px solid #555;
+  font: 14px Arial;
+
+  /* flexbox setup */
+  display: -webkit-flex;
+  -webkit-flex-direction: row;
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+}
+article
+{
+  padding: 3px;
+}
+.flex > nav
+{
+  -webkit-flex: 1 1 auto;
+  flex: 1 1 auto;
+  width: 100px;
+}
+.flex > article
+{
+  -webkit-flex: 5 1 auto;
+  flex: 5 1 auto;
+  width: 300px;
+}
+
+.flex > aside
+{
+  -webkit-flex: 1 1 auto;
+  flex: 1 1 auto;
+  width: 100px;
+}
+
+  /* colors */
+  .flex > :nth-child(1){ background : #ffffdd; }
+  .flex > :nth-child(2){ background : #ffddff; }
+  .flex > :nth-child(3){ background : #ddffff; }
