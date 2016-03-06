@@ -1,1 +1,3 @@
 port: 1445
+#SQLite location, use :memory: to store the data in RAM
+db_path: 'database.db'
